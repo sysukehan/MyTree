@@ -4,23 +4,21 @@ package binarySearchTree;
  * Created by kehan on 16-10-14.
  * 二叉搜索树的节点
  */
-public class DBSTreeNode<T> {
+public class DBSTreeNode<T extends Comparable> {
 
-    private T key;
-    private DBSTreeNode<T> leftNode;
-    private DBSTreeNode<T> rightNode;
+    private T key;  //  节点存放的关键字
+    private DBSTreeNode<T> leftNode;  //  节点的左节点
+    private DBSTreeNode<T> rightNode;  //  节点的右节点
 
-    public DBSTreeNode(T key, DBSTreeNode<T> leftNode, DBSTreeNode<T> rightNode) {
-        this.key = key;
-        this.leftNode = leftNode;
-        this.rightNode = rightNode;
-    }
-
+    /**
+     * 根据关键字构造一个节点
+     * @param key 关键字
+     */
     public DBSTreeNode(T key) {
         this.key = key;
+        leftNode = null;
+        rightNode = null;
     }
-
-    public DBSTreeNode() {}
 
     public T getKey() {
         return key;
